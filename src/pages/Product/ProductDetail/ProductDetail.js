@@ -3,6 +3,7 @@ import React from 'react';
 import {View, SafeAreaView, Text, ScrollView, Image} from 'react-native';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import styles from './ProductDetail.styles';
+import uuid from 'react-native-uuid';
 
 export default function ProductDetail() {
   const route = useRoute();
@@ -25,7 +26,7 @@ export default function ProductDetail() {
         <ScrollView horizontal bounces={false}>
           {product.ingredients.map((ing, ind) => {
             return (
-              <View style={styles.badge_container}>
+              <View key={uuid.v4()} style={styles.badge_container}>
                 <Text style={styles.badge_label}>{ing}</Text>
               </View>
             );

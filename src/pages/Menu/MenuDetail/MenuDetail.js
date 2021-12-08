@@ -1,13 +1,9 @@
-import {useRoute} from '@react-navigation/core';
 import React from 'react';
 import {SafeAreaView, View, Text} from 'react-native';
-
+import {menuItems} from './MenuItems';
 import styles from './MenuDetail.styles';
 
 export default function MenuDetail() {
-  const route = useRoute();
-  const {fd} = route.params;
-
   const renderIngredients = item => {
     return (
       <View style={styles.badge_container}>
@@ -19,10 +15,13 @@ export default function MenuDetail() {
   return (
     <SafeAreaView>
       <View style={styles.container}>
-        <Text style={styles.label}>Name: {fd.name}</Text>
-        <Text style={styles.label}>Description: {fd.description}</Text>
-        <Text style={styles.label}>Price: {fd.price}</Text>
-        <Text style={styles.label}>Ingredients:</Text>
+        {menuItems.map(f => {
+          return (
+            <Text style={styles.label}>
+              {f.label} {f.labelData}
+            </Text>
+          );
+        })}
         <View style={styles.ingredients}>
           {fd.ingredients.split(',').map(renderIngredients)}
         </View>
