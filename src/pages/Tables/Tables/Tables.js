@@ -3,7 +3,7 @@ import React, {useEffect, useState} from 'react';
 import {SafeAreaView, FlatList} from 'react-native';
 
 import styles from './Tables.styles';
-import TableCard from '../../../components/cards/TableCard';
+import TableCard from '../../../components/Cards/TableCard';
 import mock_data from '../../../MOCK_DATA.json';
 
 export default function Table() {

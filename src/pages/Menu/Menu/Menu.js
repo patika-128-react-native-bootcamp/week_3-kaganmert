@@ -3,7 +3,7 @@ import {SafeAreaView, FlatList, View} from 'react-native';
 import {useNavigation} from '@react-navigation/core';
 
 import styles from './Menu.styles';
-import MenuCard from '../../../components/cards/MenuCard';
+import MenuCard from '../../../components/Cards/MenuCard';
 
 import mockData from '../../../MOCK_DATA.json';
 
